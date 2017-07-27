@@ -1,0 +1,21 @@
+html, body{
+	margin: 0;
+	padding: 25px;
+
+	background-color: #13699B;
+}
+
+#content{
+	width: 100%;
+    height: 100vh;
+	resize: none;
+	overflow:hidden;
+
+
+	background-color: #13699B;
+	border: none;
+
+	font-family: 'Inconsolata', monospace;
+	font-size: 25px;
+	color: #fff;
+}
