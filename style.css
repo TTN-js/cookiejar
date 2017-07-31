@@ -11,11 +11,14 @@ html, body{
 	resize: none;
 	overflow:hidden;
 
-
 	background-color: #13699B;
 	border: none;
 
 	font-family: 'Inconsolata', monospace;
 	font-size: 25px;
 	color: #fff;
+}
+
+#content:focus{
+	outline: none;
 }
