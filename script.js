@@ -2,6 +2,7 @@ console.log($);
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
+    console.log(document.cookie);
 }
 
 function getCookie(cname) {
@@ -30,7 +31,7 @@ $(document).ready(function() {
 
 	checkCookie();
 
-	$("#content").keyup(function(){
+	$("#content").bind('input keyup propertychange',function(){
 		var cname = "user_input"
 		var cvalue = $("#content").val();
 
