@@ -2,6 +2,7 @@ console.log($);
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
+    console.log(document.cookie);
 }
 
 function getCookie(cname) {
@@ -30,11 +31,22 @@ $(document).ready(function() {
 
 	checkCookie();
 
-	$("#content").keyup(function(){
+	$("#content").keypress(function(event){
 		var cname = "user_input"
 		var cvalue = $("#content").val();
 
-	    setCookie(cname, cvalue);
+        console.log(event);
+        if(event.keyCode === 13){
+            event.preventDefault();
+        } else {
+            setCookie(cname, cvalue);
+        }
+       
 	});	
 });
 
+// setInterval(function(){ 
+//     var cname = "user_input";
+//     var cvalue = $("#content").val();
+//     setCookie(cname, cvalue);
+// }, 1000);
