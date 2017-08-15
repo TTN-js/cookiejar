@@ -2,7 +2,6 @@ console.log($);
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
-    console.log(document.cookie);
 }
 
 function getCookie(cname) {
@@ -27,26 +26,26 @@ function checkCookie() {
     } 
 } 
 
+
 $(document).ready(function() {
 
-	checkCookie();
+    $('#content').change(function(){
+        var cname = "user_input"
+        var cvalue = $("#content").val();
+        setCookie(cname, cvalue);
+        console.log('new cookie set');
+    });
 
-	$("#content").keypress(function(event){
-		var cname = "user_input"
-		var cvalue = $("#content").val();
+    function InputChangeListener()
+    {
+        previousVal = $('#content').val();
 
-        console.log(event);
-        if(event.keyCode === 13){
-            event.preventDefault();
-        } else {
-            setCookie(cname, cvalue);
+        if($('#content').val()!= previousVal){
+            $('#content').change();  
         }
-       
-	});	
+    }
+
+    setInterval(InputChangeListener, 500);
+
 });
 
-// setInterval(function(){ 
-//     var cname = "user_input";
-//     var cvalue = $("#content").val();
-//     setCookie(cname, cvalue);
-// }, 1000);
